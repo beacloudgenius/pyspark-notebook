@@ -16,3 +16,15 @@ To stop the service
 ```shell
 docker-compose stop
 ```
+
+### Build and run
+
+	docker build -t cloudgenius/pyspark-notebook .
+
+	docker run -d -p 8888:8888 cloudgenius/pyspark-notebook
+
+	firefox ip:8888
+
+### Remember to add to the notebook
+
+	%matplotlib inline

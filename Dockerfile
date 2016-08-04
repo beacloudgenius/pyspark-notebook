@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 
-MAINTAINER Prabeesh K.
+MAINTAINER hello@cloudgeni.us
 
 RUN \
     apt-get -y update &&\
@@ -27,14 +27,19 @@ RUN apt-get install -y build-essential \
     python \
     python-dev \
     python-pip \
-    python-zmq
+    python-zmq 
+
+RUN apt-get -y build-dep python-matplotlib
 
 RUN pip install py4j \
     ipython[notebook]==3.2 \
     jsonschema \
     jinja2 \
-    terminado \
-    tornado
+    terminado \ 
+    tornado \
+    matplotlib
+
+RUN pip install --upgrade tornado
 
 RUN ipython profile create pyspark
 

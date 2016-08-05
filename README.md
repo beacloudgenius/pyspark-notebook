@@ -21,8 +21,12 @@ docker-compose stop
 
 	docker build -t cloudgenius/pyspark-notebook .
 
-	docker run -d -p 8888:8888 cloudgenius/pyspark-notebook
+	docker push cloudgenius/pyspark-notebook  
 
+	docker run -d -v /home/cloudgenius/notebook:/notebook -p 8888:8888 cloudgenius/pyspark-notebook:latest 
+
+	docker-compose up -d
+	
 	firefox ip:8888
 
 ### Remember to add to the notebook

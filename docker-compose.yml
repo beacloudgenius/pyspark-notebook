@@ -2,5 +2,5 @@ web:
     build: .
     ports:
         - "8888:8888"
-    working_dir:
-        - .:/notebook
+    volumes:
+        - /home/cloudgenius/notebook:/notebook
